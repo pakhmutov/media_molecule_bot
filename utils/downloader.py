@@ -5,10 +5,13 @@ from config import DOWNLOAD_DIR, BASE_DIR
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
 TIKTOK_COOKIES = os.path.join(BASE_DIR, "tiktok_cookies.txt")
+INSTAGRAM_COOKIES = os.path.join(BASE_DIR, "instagram_cookies.txt")
 
 def _add_cookies(opts: dict, url: str) -> dict:
     if 'tiktok.com' in url and os.path.exists(TIKTOK_COOKIES):
         opts['cookiefile'] = TIKTOK_COOKIES
+    elif 'instagram.com' in url and os.path.exists(INSTAGRAM_COOKIES):
+        opts['cookiefile'] = INSTAGRAM_COOKIES
     return opts
 
 def get_info(url: str) -> dict:
