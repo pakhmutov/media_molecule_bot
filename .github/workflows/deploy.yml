@@ -18,5 +18,5 @@ jobs:
                   script: |
                       cd /root/media_molecule_bot
                       git pull origin main
-                      pip3 install -r requirements.txt -q
-                      systemctl restart mediabot
+                      venv/bin/pip install -r requirements.txt -q
+                      systemctl restart mediamolecule
